@@ -1,8 +1,8 @@
 /**
- * Face.java will be utilized for face creation (surface view display)
+ * Face.java will be utilized for face creation and rendering (surface view display)
  *
  * @author Jarren Calizo
- * @version 10 Sep 2020
+ * @version 06 Oct 2020
  */
 package com.example.jarren_c_facemaker_calizo23;
 
@@ -17,7 +17,19 @@ public class Face {
     private int skinColor;
     private int eyeColor;
     private int hairColor;
-    private int hairStyle;
+    public int hairStyle;
+
+    int rValSkin = red();
+    int gValSkin = green();
+    int bValSkin = blue();
+    int rValEye = red();
+    int gValEye = green();
+    int bValEye= blue();
+    int rValHair = red();
+    int gValHair = green();
+    int bValHair = blue();
+    int valHair = hairPicker();
+
 
     /**
      * helper method that randomize integer value for red color
@@ -51,7 +63,8 @@ public class Face {
 
     /**
      * External Citation
-     * Problem: I couldn't figure out how to combine 3 ints into a color (not simple as new Color(red, green, blue))
+     * Problem: I couldn't figure out how to combine 3 ints into a color
+     * (not simple as new Color(red, green, blue))
      *
      * Resource: https://stackoverflow.com/questions/42169773/android-convert-argb-color-to-rgb
      * Solution: I used Color.argb w/ alpha 0xFF
@@ -61,10 +74,10 @@ public class Face {
      * Method that sets random color values to face instance variables
      */
     public void randomize () {
-        this.skinColor = Color.argb(0xFF, red(), green(), blue());
-        this.eyeColor = Color.argb(0xFF, red(), green(), blue());;
-        this.hairColor = Color.argb(0xFF, red(), green(), blue());;
-        this.hairStyle = hairPicker();
+        this.skinColor = Color.argb(0xFF, rValSkin, gValSkin, bValSkin);
+        this.eyeColor = Color.argb(0xFF, rValEye, gValEye, bValEye);
+        this.hairColor = Color.argb(0xFF, rValHair, gValHair, bValHair);
+        this.hairStyle = valHair;
     }
     /**
      * Face class constructor
@@ -73,4 +86,22 @@ public class Face {
         this.randomize();
 
     }
+
+    public int getHairColor() {
+        return this.hairColor;
+    }
+    public int getSkinColor() {
+        return this.skinColor;
+    }
+    public int getEyeColor() {
+        return this.eyeColor;
+    }
+    public int getHairStyle() {
+        return this.hairStyle;
+    }
+    public int setHairStyle(int hairNum) {
+        this.hairStyle = hairNum;
+        return this.hairStyle;
+    }
+
 }

@@ -18,7 +18,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/WelcomeTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -29,7 +29,7 @@
                 android:textSize="32sp" />
         </LinearLayout>
 
-        <SurfaceView
+        <com.example.jarren_c_facemaker_calizo23.View
             android:id="@+id/surfaceView"
             android:layout_width="match_parent"
             android:layout_height="375sp" />
@@ -134,8 +134,7 @@
         <Spinner
             android:id="@+id/spinnerHair"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0" />
+            android:layout_height="100dp" />
         <Button
             android:id="@+id/randomizeButton"
             android:layout_width="match_parent"
