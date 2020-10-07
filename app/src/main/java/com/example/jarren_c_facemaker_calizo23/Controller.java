@@ -54,8 +54,8 @@ public class Controller implements View.OnClickListener, SeekBar.OnSeekBarChange
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-        String colorCheck = seekBar.getTag().toString();
-        if(colorCheck.equals("rSeekBar")) {
+        int colorCheck = seekBar.getId();
+        if(colorCheck == R.id.rSeekBar) {
             switch(colorIndicator) {
                 case "Hair":
                     newFace.rValHair =  i;
@@ -68,7 +68,7 @@ public class Controller implements View.OnClickListener, SeekBar.OnSeekBarChange
                     break;
             }
         }
-        if(colorCheck.equals("gSeekBar")) {
+        if(colorCheck == R.id.gSeekBar) {
             switch(colorIndicator) {
                 case "Hair":
                     newFace.gValHair =  i;
@@ -81,7 +81,7 @@ public class Controller implements View.OnClickListener, SeekBar.OnSeekBarChange
                     break;
             }
         }
-        if(colorCheck.equals("bSeekBar")) {
+        if(colorCheck == R.id.blueSeekBar) {
             switch(colorIndicator) {
                 case "Hair":
                     newFace.bValHair =  i;
